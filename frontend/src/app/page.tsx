@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -14,19 +15,31 @@ export default function LandingPage() {
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6">
         {/* Logo */}
-        <div className="mb-10 flex items-center gap-4">
-          <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 shadow-lg" />
+      <div className="mb-12">
+        <div className="flex items-center gap-4">
+          <Image
+            src="/logo.png"
+            alt="ChainGuard Logo"
+            width={150}
+            height={150}
+          />
 
           <div>
-            <h1 className="text-4xl font-bold">
-              Chain<span className="text-blue-500">Guard</span>
+            <h1 className="text-5xl font-bold">
+              Chain
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Guard
+              </span>
             </h1>
 
-            <p className="text-xs uppercase tracking-[0.4em] text-zinc-500">
+            <div className="h-1 w-full bg-gradient-to-r from-purple-400 to-blue-400 mt-2 rounded-full" />
+
+            <p className="text-xs tracking-[0.4em] text-zinc-500 uppercase mt-4">
               Blockchain Security Assistant
             </p>
           </div>
         </div>
+      </div> 
 
         {/* Hero */}
         <div className="max-w-4xl text-center">
