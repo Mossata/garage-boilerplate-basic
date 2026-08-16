@@ -16,10 +16,10 @@ export default async function DashboardPage() {
   const greetingName = displayName ?? session?.email ?? null
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto w-full max-w-6xl space-y-6 px-4 sm:px-6 lg:px-8">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-300">
           Welcome back{greetingName ? `, ${greetingName}` : ''}.
         </p>
       </div>
@@ -28,9 +28,9 @@ export default async function DashboardPage() {
         {(['Metric One', 'Metric Two', 'Metric Three'] as const).map((title) => (
           <div
             key={title}
-            className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            className="rounded-lg border border-white/15 bg-white/5 p-6 backdrop-blur-sm"
           >
-            <p className="text-sm font-medium text-zinc-500">{title}</p>
+            <p className="text-sm font-medium text-zinc-300">{title}</p>
             <p className="mt-2 text-3xl font-bold">—</p>
           </div>
         ))}

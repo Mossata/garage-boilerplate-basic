@@ -42,7 +42,7 @@ export default function SignInPage() {
     try {
       await signInWithEmail(data.email, data.password)
       toast.success('Signed in successfully')
-      router.replace('/dashboard')
+      router.replace('/team')
       router.refresh()
     } catch (error: unknown) {
       if (error instanceof Error && error.message.includes('email-not-verified')) {
@@ -56,7 +56,7 @@ export default function SignInPage() {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      router.replace('/dashboard')
+      router.replace('/team')
     } catch {
       toast.error('Google sign-in failed. Please try again.')
     }
@@ -64,9 +64,7 @@ export default function SignInPage() {
 
 return (
   <div className="min-h-screen flex bg-[#020817] text-white">
-
-    {/* LEFT SIDE */}
-    <div className="hidden lg:flex w-1/2 flex-col justify-center px-20 relative overflow-hidden bg-[#020817]">
+    <div className="hidden lg:flex flex-col justify-center px-20 relative overflow-hidden bg-[#020817]">
 
       {/* Logo */}
       <div className="mb-12">
@@ -77,21 +75,6 @@ return (
             width={150}
             height={150}
           />
-
-          <div>
-            <h1 className="text-5xl font-bold">
-              Chain
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Guard
-              </span>
-            </h1>
-
-            <div className="h-1 w-full bg-gradient-to-r from-purple-400 to-blue-400 mt-2 rounded-full" />
-
-            <p className="text-xs tracking-[0.4em] text-zinc-500 uppercase mt-4">
-              Blockchain Security Assistant
-            </p>
-          </div>
         </div>
       </div>
 

@@ -12,6 +12,7 @@
     "format:check": "prettier --check src/",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:auth-flow": "vitest run tests/unit/proxy.auth-flow.test.ts",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },

@@ -20,9 +20,9 @@ export function NotesList() {
   return (
     <ul className="space-y-2">
       {notes.map((note) => (
-        <li key={note.id} className="rounded-lg border p-4">
+        <li key={note.id} className="rounded-lg border border-white/15 bg-white/5 p-4 backdrop-blur-sm">
           <h3 className="font-medium">{note.title}</h3>
-          <p className="text-sm text-zinc-500">{note.body}</p>
+          <p className="text-sm text-zinc-300">{note.body}</p>
         </li>
       ))}
     </ul>
